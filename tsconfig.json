@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "target": "es2020",                      // ✅ es2020 is widely compatible and safe for Next.js
+    "lib": ["dom", "dom.iterable", "es2020"],// ✅ match target, avoid esnext mismatch
+    "allowJs": true,                         // ✅ allow JS files
+    "checkJs": false,                        // ✅ no JS checking unless you want it
+    "skipLibCheck": true,                    // ✅ skip .d.ts checks
+    "strict": true,                          // ✅ recommended for Next.js, but can set false if you prefer
+    "noEmit": true,                          // ✅ no emit in orchestrator tsconfig
+    "incremental": true,                     // ✅ speed up builds
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": ["node_modules"],
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
+}
