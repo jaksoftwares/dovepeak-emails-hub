@@ -1,10 +1,9 @@
 import { useState } from 'react';
-import { Header } from './components/Header';
 
 type AppView = 'create' | 'preview' | 'history';
 
 function App() {
-  const [activeTab, setActiveTab] = useState<AppView>('create');
+  const [activeTab] = useState<AppView>('create');
 
   const renderContent = () => {
     switch (activeTab) {
@@ -21,7 +20,6 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <Header activeTab={activeTab} onTabChange={(tab) => setActiveTab(tab as AppView)} />
       <main className="py-8">
         {renderContent()}
       </main>
