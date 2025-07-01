@@ -102,7 +102,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <Header activeTab={activeTab} onTabChange={setActiveTab} />
+      <Header activeTab={activeTab} onTabChange={(tab) => setActiveTab(tab as AppView)} />
       <main className="py-8">
         {renderContent()}
       </main>
